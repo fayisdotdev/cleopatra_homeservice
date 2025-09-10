@@ -27,7 +27,7 @@ A Flutter application for booking home cleaning services. Users can select stand
 
 1. Clone the repository:
 
-bash
+'''bash
 git clone https://github.com/fayisdotdev/cleopatra_homecare.git
 cd cleopatra_homecare
 Install dependencies:
@@ -42,7 +42,7 @@ Copy code
 flutter run
 Folder Structure
 lib/controllers/ – GetX controllers for services and bookings.
-
+'''
 lib/models/ – Data models (Service, Booking).
 
 lib/screens/ – UI screens (HomeScreen, ConfirmationScreen, MyServicesScreen).
@@ -68,7 +68,8 @@ Local persistence: Bookings are stored locally for quick preview next time.
 
 Error handling and debug: Added print statements and snackbar notifications for confirmation.
 
-Resources
+#Resources
+
 [Flutter Documentation
 ](https://docs.flutter.dev/)
 
