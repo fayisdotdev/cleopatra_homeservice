@@ -6,7 +6,7 @@ A Flutter application for booking home cleaning services. Users can select stand
 
 - Browse a list of cleaning services grouped by category (Standard, Deep Cleaning, Add-Ons).
 - Select multiple services at once with an interactive UI.
-- View selected services in a **Confirmation Screen** with total cost calculation.
+- View selected services in a **Confirmation Screen** with total cost calculation and Satisfaction message.
 - Save bookings locally using `GetStorage` for easy retrieval later.
 - View all past bookings in a **My Services** history screen.
 - Dynamic UI with animated selection indicators.
@@ -27,7 +27,7 @@ A Flutter application for booking home cleaning services. Users can select stand
 
 1. Clone the repository:
 
-```bash
+bash
 git clone https://github.com/yourusername/cleopatra_homecare.git
 cd cleopatra_homecare
 Install dependencies:
@@ -69,8 +69,11 @@ Local persistence: Bookings are stored locally for quick preview next time.
 Error handling and debug: Added print statements and snackbar notifications for confirmation.
 
 Resources
-Flutter Documentation
+[Flutter Documentation
+](https://docs.flutter.dev/)
 
-GetX Package
+[GetX Package
+](https://pub.dev/packages/get)
 
-GetStorage Package
+[GetStorage Package
+](https://pub.dev/packages/get)
