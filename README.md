@@ -76,10 +76,8 @@ Satisfaction Guarantee: Shows a friendly message ensuring customer happiness.
 
 ### Resources
 
-### [Flutter Documentation](https://docs.flutter.dev/)
+#### [Flutter Documentation](https://docs.flutter.dev/)
 
-[GetX Package
-](https://pub.dev/packages/get)
+#### [GetX Package](https://pub.dev/packages/get)
 
-[GetStorage Package
-](https://pub.dev/packages/get)
+#### [GetStorage Package](https://pub.dev/packages/get)
