@@ -34,15 +34,10 @@ A Flutter application for booking home cleaning services. Users can select **Sta
 git clone https://github.com/fayisdotdev/cleopatra_homecare.git
 cd cleopatra_homecare
 Install dependencies:
+$ flutter pub get
 
-bash
-Copy code
-flutter pub get
 Run the app:
-
-bash
-Copy code
-flutter run
+$ flutter run
 ```
 ### Folder Structure
 lib/controllers/ – GetX controllers for services and bookings.
