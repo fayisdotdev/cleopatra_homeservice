@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Select Services"),
+        title: Text("Cleopatra HomeCare", style: GoogleFonts.poppins(),),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
         elevation: 0,
