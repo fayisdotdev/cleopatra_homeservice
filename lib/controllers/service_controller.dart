@@ -60,4 +60,9 @@ class ServiceController extends GetxController {
     double serviceFee = subtotal * 0.10; // 10% client fee
     return subtotal + serviceFee;
   }
+
+  // ✅ Clear all selected services
+  void clearSelectedServices() {
+    selectedServices.clear();
+  }
 }

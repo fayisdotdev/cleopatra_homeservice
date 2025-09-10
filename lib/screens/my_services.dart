@@ -1,5 +1,6 @@
 import 'package:cleopatra_homecare/controllers/conformation_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 class MyServicesScreen extends StatelessWidget {
@@ -10,17 +11,24 @@ class MyServicesScreen extends StatelessWidget {
     final confirmationController = Get.put(ConfirmationController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Services"),
+        title: Text(
+          "My Services",
+          style: GoogleFonts.poppins(
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
       body: Obx(() {
         final bookings = confirmationController.bookings;
         if (bookings.isEmpty) {
-          return const Center(
+          return Center(
             child: Text(
               "No services booked yet.",
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: GoogleFonts.poppins(fontSize: 16, color: Colors.grey),
             ),
           );
         }
@@ -45,7 +53,7 @@ class MyServicesScreen extends StatelessWidget {
                   children: [
                     Text(
                       "Booking #${index + 1}",
-                      style: const TextStyle(
+                      style: GoogleFonts.poppins(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -55,13 +63,14 @@ class MyServicesScreen extends StatelessWidget {
                         .map(
                           (s) => Text(
                             "• ${s['name']} (${s['category']}) - \$${s['price'].toStringAsFixed(2)}",
+                            style: GoogleFonts.poppins(),
                           ),
                         )
                         .toList(),
                     const SizedBox(height: 10),
                     Text(
                       "Total: \$${total.toStringAsFixed(2)}",
-                      style: const TextStyle(
+                      style: GoogleFonts.poppins(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
@@ -69,7 +78,10 @@ class MyServicesScreen extends StatelessWidget {
                     const SizedBox(height: 5),
                     Text(
                       "Date: $timestamp",
-                      style: const TextStyle(fontSize: 12, color: Colors.grey),
+                      style: GoogleFonts.poppins(
+                        fontSize: 12,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:cleopatra_homecare/screens/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -49,16 +50,16 @@ class _SplashScreenState extends State<SplashScreen>
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(
-                Icons.cleaning_services,
-                size: 80,
-                color: Colors.blueAccent,
-              ),
-              SizedBox(height: 20),
+            children:  [
+              // Icon(
+              //   Icons.cleaning_services_rounded,
+              //   size: 80,
+              //   color: Colors.blueAccent,
+              // ),
+              // SizedBox(height: 20),
               Text(
                 "Cleopatra HomeCare",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87,
@@ -67,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen>
               SizedBox(height: 10),
               Text(
                 "Sparkling Homes, Stress-Free Living",
-                style: TextStyle(
+                style: GoogleFonts.poppins(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: Colors.grey,

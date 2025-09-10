@@ -2,6 +2,7 @@ import 'package:cleopatra_homecare/controllers/service_controller.dart';
 import 'package:cleopatra_homecare/screens/confirmation_page.dart';
 import 'package:cleopatra_homecare/screens/my_services.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:cleopatra_homecare/models/service_model.dart';
 
@@ -17,16 +18,16 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Select Services"),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
+        elevation: 0,
         actions: [
-  IconButton(
-    icon: const Icon(Icons.history),
-    tooltip: "My Services",
-    onPressed: () {
-      Get.to(() => const MyServicesScreen());
-    },
-  ),
-],
-
+          IconButton(
+            icon: const Icon(Icons.history),
+            tooltip: "My Services",
+            onPressed: () {
+              Get.to(() => const MyServicesScreen());
+            },
+          ),
+        ],
       ),
       body: Obx(() {
         if (serviceController.services.isEmpty) {
@@ -40,44 +41,79 @@ class HomeScreen extends StatelessWidget {
         }
 
         return ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           children: [
             for (var entry in grouped.entries) ...[
               Text(
                 entry.key,
-                style: const TextStyle(
-                  fontSize: 18,
+                style: GoogleFonts.poppins(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
+                  color: Colors.black87,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 12),
               ...entry.value.map((service) {
-                final isSelected =
-                    serviceController.selectedServices.contains(service);
-                return Card(
-                  shape: RoundedRectangleBorder(
+                final isSelected = serviceController.selectedServices.contains(
+                  service,
+                );
+                return AnimatedContainer(
+                  duration: const Duration(milliseconds: 300),
+                  margin: const EdgeInsets.only(bottom: 12),
+                  decoration: BoxDecoration(
+                    color: isSelected ? Colors.blue.shade50 : Colors.white,
                     borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 6,
+                        offset: const Offset(0, 3),
+                      ),
+                    ],
                   ),
                   child: ListTile(
-                    title: Text(service.name),
-                    subtitle: Text("\$${service.price.toStringAsFixed(2)}"),
-                    trailing: Icon(
-                      isSelected
-                          ? Icons.check_circle
-                          : Icons.radio_button_unchecked,
-                      color: isSelected ? Colors.green : Colors.grey,
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 8,
+                    ),
+                    title: Text(
+                      service.name,
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w600,
+                        color: isSelected ? Colors.blueAccent : Colors.black87,
+                      ),
+                    ),
+                    subtitle: Text(
+                      "\$${service.price.toStringAsFixed(2)}",
+                      style: GoogleFonts.poppins(fontWeight: FontWeight.w500),
+                    ),
+                    trailing: AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 300),
+                      child: isSelected
+                          ? Icon(
+                              Icons.check_circle,
+                              color: Colors.blueAccent,
+                              key: UniqueKey(),
+                            )
+                          : Icon(
+                              Icons.radio_button_unchecked,
+                              color: Colors.grey,
+                              key: UniqueKey(),
+                            ),
                     ),
                     onTap: () => serviceController.toggleService(service),
                   ),
                 );
               }).toList(),
-              const SizedBox(height: 20),
             ],
+            const SizedBox(height: 80), // padding for bottom button
           ],
         );
       }),
       bottomNavigationBar: Obx(() {
-        final total = serviceController.totalCost;
+        // final total = serviceController.totalCost;
+        final isEmpty = serviceController.selectedServices.isEmpty;
+
         return Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
@@ -85,32 +121,36 @@ class HomeScreen extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.black.withOpacity(0.05),
-                blurRadius: 5,
+                blurRadius: 10,
                 offset: const Offset(0, -2),
               ),
             ],
           ),
           child: ElevatedButton(
-            onPressed: serviceController.selectedServices.isEmpty
+            onPressed: isEmpty
                 ? null
                 : () {
-                    Get.to(() => ConfirmationScreen(
-                          selectedServices:
-                              serviceController.selectedServices.toList(),
-                        ));
+                    Get.to(
+                      () => ConfirmationScreen(
+                        selectedServices: serviceController.selectedServices
+                            .toList(),
+                      ),
+                    );
                   },
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blueAccent,
-              padding: const EdgeInsets.symmetric(vertical: 14),
+              padding: const EdgeInsets.symmetric(vertical: 16),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
+                borderRadius: BorderRadius.circular(14),
               ),
+              backgroundColor: isEmpty ? Colors.grey : Colors.blueAccent,
             ),
             child: Text(
-              serviceController.selectedServices.isEmpty
-                  ? "Select a Service"
-                  : "Book Service (\$${total.toStringAsFixed(2)})",
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              isEmpty ? "Select a Service" : "Book Service",
+              style: GoogleFonts.poppins(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         );
