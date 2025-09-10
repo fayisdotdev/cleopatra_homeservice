@@ -55,18 +55,18 @@ lib/widgets/ – Reusable UI components (if any).
 
 android/ & ios/ – Platform-specific configuration.
 
-Notes / Extras Added
+### Notes 
 ServiceController: Manages services, selection, and calculates total cost.
 
 ConfirmationController: Saves bookings locally using GetStorage and provides methods to retrieve and clear bookings.
 
 Animated & modern UI: Updated HomeScreen to show services in cards with smooth animations.
 
-My Services Screen: Lets users view all previous bookings.
-
 Booking Confirmation: Includes snackbars, debug prints, and automatic navigation back to HomeScreen.
 
 State Management: Fully reactive using GetX.
+### Extras Added
+My Services Screen: Lets users view all previous bookings. 
 
 Local Persistence: Bookings are stored locally for quick preview next time.
 
@@ -76,8 +76,7 @@ Satisfaction Guarantee: Shows a friendly message ensuring customer happiness.
 
 ### Resources
 
-[Flutter Documentation
-](https://docs.flutter.dev/)
+### [Flutter Documentation](https://docs.flutter.dev/)
 
 [GetX Package
 ](https://pub.dev/packages/get)
