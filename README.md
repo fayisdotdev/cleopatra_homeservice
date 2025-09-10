@@ -1,16 +1,76 @@
-# cleopatra_homecare
+# Cleopatra Homecare
 
-A new Flutter project.
+A Flutter application for booking home cleaning services. Users can select standard cleaning, deep cleaning, and add-on services, preview their selections, and confirm bookings, which are stored locally for future reference.
+
+## Features
+
+- Browse a list of cleaning services grouped by category (Standard, Deep Cleaning, Add-Ons).
+- Select multiple services at once with an interactive UI.
+- View selected services in a **Confirmation Screen** with total cost calculation.
+- Save bookings locally using `GetStorage` for easy retrieval later.
+- View all past bookings in a **My Services** history screen.
+- Dynamic UI with animated selection indicators.
+- Clear selected services automatically after booking.
+- Snackbars and debug logging for feedback and testing.
+- Fully built with **GetX** state management and **Flutter**.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK >= 3.x
+- Dart >= 3.x
+- Android Studio or VS Code
+- An emulator or physical device
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/cleopatra_homecare.git
+cd cleopatra_homecare
+Install dependencies:
+
+bash
+Copy code
+flutter pub get
+Run the app:
+
+bash
+Copy code
+flutter run
+Folder Structure
+lib/controllers/ – GetX controllers for services and bookings.
+
+lib/models/ – Data models (Service, Booking).
+
+lib/screens/ – UI screens (HomeScreen, ConfirmationScreen, MyServicesScreen).
+
+lib/widgets/ – Reusable UI components (if any).
+
+android/ & ios/ – Platform-specific configuration.
+
+Notes / Extras Added
+ServiceController: Manages services, selection, and calculates total cost with optional platform fee.
+
+ConfirmationController: Saves bookings locally using GetStorage and provides methods to retrieve and clear bookings.
+
+Animated and modern UI: Updated HomeScreen to show services in cards with smooth animations and color changes on selection.
+
+My Services Screen: Lets users view all previous bookings.
+
+Booking confirmation: Includes snackbars, debug prints, and automatic navigation back to HomeScreen.
+
+State management: Fully reactive using GetX.
+
+Local persistence: Bookings are stored locally for quick preview next time.
+
+Error handling and debug: Added print statements and snackbar notifications for confirmation.
+
+Resources
+Flutter Documentation
+
+GetX Package
+
+GetStorage Package
