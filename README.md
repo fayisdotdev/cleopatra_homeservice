@@ -46,8 +46,6 @@ lib/models/ – Data models (Service, Booking).
 
 lib/screens/ – UI screens (HomeScreen, ConfirmationScreen, MyServicesScreen).
 
-lib/widgets/ – Reusable UI components (if any).
-
 android/ & ios/ – Platform-specific configuration.
 
 ### Notes 
