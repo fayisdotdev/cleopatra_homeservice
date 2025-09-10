@@ -28,7 +28,7 @@ A Flutter application for booking home cleaning services. Users can select stand
 1. Clone the repository:
 
 bash
-git clone https://github.com/yourusername/cleopatra_homecare.git
+git clone https://github.com/fayisdotdev/cleopatra_homecare.git
 cd cleopatra_homecare
 Install dependencies:
 
