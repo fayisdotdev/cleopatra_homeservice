@@ -43,9 +43,9 @@ Run the app:
 bash
 Copy code
 flutter run
-Folder Structure
-lib/controllers/ – GetX controllers for services and bookings.
 ```
+### Folder Structure
+lib/controllers/ – GetX controllers for services and bookings.
 
 lib/models/ – Data models (Service, Booking).
 
@@ -74,7 +74,7 @@ Error Handling & Debug: Added print statements and snackbar notifications for co
 
 Satisfaction Guarantee: Shows a friendly message ensuring customer happiness.
 
-####Resources
+### Resources
 
 [Flutter Documentation
 ](https://docs.flutter.dev/)
