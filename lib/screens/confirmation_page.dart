@@ -105,7 +105,38 @@ class ConfirmationScreen extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 16),
+// Add this above the Confirm Booking button in the Column
+const SizedBox(height: 16),
+
+// Satisfaction Guarantee Banner
+Container(
+  width: double.infinity,
+  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+  margin: const EdgeInsets.only(bottom: 12),
+  decoration: BoxDecoration(
+    color: Colors.orange.shade50, // subtle highlight
+    borderRadius: BorderRadius.circular(12),
+    border: Border.all(color: Colors.orange.shade200),
+    boxShadow: [
+      BoxShadow(
+        color: Colors.black.withOpacity(0.03),
+        blurRadius: 4,
+        offset: const Offset(0, 2),
+      ),
+    ],
+  ),
+  child: Text(
+    "If you are not happy, it's free. \nNo questions asked.",
+    style: GoogleFonts.poppins(
+      fontSize: 14,
+      fontWeight: FontWeight.w500,
+      color: Colors.orange.shade800,
+    ),
+    textAlign: TextAlign.center,
+  ),
+),
+
+const SizedBox(height: 8),
 
             // Confirm Booking Button
             SizedBox(
@@ -144,6 +175,7 @@ class ConfirmationScreen extends StatelessWidget {
                     print("Error saving booking: $e");
                   }
                 },
+                
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
                   padding: const EdgeInsets.symmetric(vertical: 16),

@@ -67,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
               ),
               SizedBox(height: 10),
               Text(
-                "Sparkling Homes, Stress-Free Living",
+                "Sparkling Homes.",
                 style: GoogleFonts.poppins(
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
