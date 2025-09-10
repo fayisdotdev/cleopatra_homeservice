@@ -52,7 +52,7 @@ lib/widgets/ – Reusable UI components (if any).
 android/ & ios/ – Platform-specific configuration.
 
 Notes / Extras Added
-ServiceController: Manages services, selection, and calculates total cost with optional platform fee.
+ServiceController: Manages services, selection, and calculates total cost.
 
 ConfirmationController: Saves bookings locally using GetStorage and provides methods to retrieve and clear bookings.
 
