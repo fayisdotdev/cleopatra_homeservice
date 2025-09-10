@@ -45,6 +45,7 @@ Copy code
 flutter run
 Folder Structure
 lib/controllers/ – GetX controllers for services and bookings.
+```
 
 lib/models/ – Data models (Service, Booking).
 
