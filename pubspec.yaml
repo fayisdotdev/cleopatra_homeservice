@@ -96,6 +96,6 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/app_icon.png"
+  image_path: "assets/images/app_icon1.png"
   adaptive_icon_background: "#FFFFFFFF" # Using your theme's primary color
-  adaptive_icon_foreground: "assets/images/app_icon.png"
+  adaptive_icon_foreground: "assets/images/app_icon1.png"
